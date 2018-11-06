@@ -26,11 +26,11 @@ start_time = time.time()
 
 def train_qtg(df, train_set, Validation_set_i):
     if sys.argv[3]=='AT': 
-        mol_para=['auto',20]# parameter for Arabidopsis
+        mol_para=['auto',20]# optimum parameters for Arabidopsis
     if sys.argv[3]=='OS':
-        mol_para=['auto',5]# parameter for rice
+        mol_para=['auto',5]# optimum parameters for rice
     clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0]) # Random forest parameters
-    neg_inter=5000  # interrations of randomly select negatives from genome and re-train models 
+    neg_inter=5000  # interrations for randomly selecting negatives from genome and re-training models 
     prediction_list = (len(Validation_set_i))*[0]
     for i in range(0, neg_inter):
                 train_data = train_set # positives used for training 
@@ -67,7 +67,7 @@ with open(sys.argv[2],'r') as f:
             if not key:
                 df = pd.read_csv(dt)
                 df=df.dropna(axis=1,how='all') 
-                df['network_weight'] = preprocessing.scale(df['network_weight'])
+                df['network_weight'] = preprocessing.scale(df['network_weight']) # standardization
                 group = list(group) # each group is a QTL
                 group=[i.strip('\n') for i in group]
                 QTL_name=group[0]
