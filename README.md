@@ -16,11 +16,11 @@ The source code and input files can be found in the ‘prediction’ folder. Run
 
 QTL1 name
 
-Gene1 of QTL1
+Gene1 in QTL1
 
-Gene2 of QTL1 
+Gene2 in QTL1
 
-Gene3 of QTL1 
+Gene3 in QTL1
 
 … 
 
@@ -28,11 +28,11 @@ Gene3 of QTL1
 
 QTL2 name 
 
-Gene1 of QTL2 
+Gene1 in QTL2
 
-Gene2 of QTL2 
+Gene2 in QTL2
 
-Gene3 of QTL2 
+Gene3 in QTL2 
 
 …
 
