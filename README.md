@@ -8,7 +8,7 @@ Authors: Fan Lin, December 2018
 
 ### For prediction
 
-The source code and input files can be found in the ‘prediction’ folder. 
+The source code and input files can be found in the ‘prediction’ folder. Runing the 'QTG_Finder.py' will require a QTL gene list provided by the user. 
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
@@ -36,7 +36,7 @@ Gene3 of QTL2
 
 …
 
-2.
+2. Make sure tou have the feature list "Arabidopsis_features-v3.05.txt" or "rice_features_v1.3.11.txt" in the same directory. 
 
 3.
 
