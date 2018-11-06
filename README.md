@@ -6,7 +6,7 @@ QTG-Finder is a novel machine-learning pipeline to prioritize causal genes for Q
 Authors: Fan Lin, December 2018
          Jue Fan, December 2018
 
-###For prediction
+### For prediction
 
 The source code and input files can be found in the ‘prediction’ folder. 
 
