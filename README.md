@@ -14,9 +14,9 @@ The source code and input files can be found in the ‘prediction’ folder.
 
 // 
 
-| 'QTL1 name' |
+QTL1 name
 
-| 'Gene1 of QTL1' |
+Gene1 of QTL1
 
 Gene2 of QTL1 
 
