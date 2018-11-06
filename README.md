@@ -40,7 +40,7 @@ Gene3 of QTL2
 
 3. Usage = "QTG_Finder.py input_feature_list QTL_gene_list species_abbreviation"
 
-As a example, Run ```QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
+As a example, Run ```python3 QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
 
 
 
