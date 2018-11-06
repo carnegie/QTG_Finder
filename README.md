@@ -42,8 +42,11 @@ Gene3 of QTL2
 
 As a example, ```python3 QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
 
+Users can also run the batch file 'QTG_batch_Prediction.sh' on a server.
+
 
 
 ### For analyses and replications
 
-The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the ‘tests’ folder. The usage of each scripts (.py) are described in the beginnings of the file.   
+The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the ‘tests’ folder. The usage of each scripts (.py) is described in the beginnings of the file.
+
