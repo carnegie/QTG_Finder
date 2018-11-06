@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
 # Version 20181106
-# Purpose: Use leave-one-out analysis and the change of AUC-ROC to evaluate importance of each feature. Note: This script is for testing causal genes in a single QTL. A batch file is abaliable to perform validation on multiple QTLs  
-# Usage = "QTG_literature_validation.py input_feature_list species_abbreviation QTL_gene_list_flag"
+# Purpose: Use leave-one-out analysis and the change of AUC-ROC to evaluate importance of each feature. Note: This script is for testing causal genes in a single QTL. Batch files 'AT_lit_validation.sh' or 'OS_lit_validation.sh' are abaliable to analyze multiple QTLs.  
+# Usage = "QTG_literature_validation.py feature_list species_abbreviation QTL_gene_list_flag"
+# feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# QTL_gene_list_flag: a list of genes in the QTL. Causal genes are labeled with 1 in the second column. Other genome genes are labeled as 0. 
-# Usage example: QTG_literature_validation.py Arabidopsis_features-v3.05.txt 'AT' Huang_2012.csv  
+# QTL_gene_list_flag: a list of genes in the QTL. Causal genes are labeled with 1 in the second column. Other genome genes are labeled as 0. examples can be found in 'tests/input/AT' or 'tests/input/OS/'
+# Usage example: QTG_literature_validation.py Arabidopsis_features-v3.05.txt 'AT' ./input/AT/Huang_2012.csv  
 
 import numpy as np
 import random
