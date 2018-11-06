@@ -12,9 +12,9 @@ The source code and input files can be found in the ‘prediction’ folder.
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
-| // |  
+//
 
-| QTL1 name |  
+QTL1 name  
 
 Gene1 of QTL1 
 
