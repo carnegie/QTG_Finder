@@ -38,12 +38,12 @@ Gene3 of QTL2
 
 2. Make sure tou have the feature list "Arabidopsis_features-v3.05.txt" or "rice_features_v1.3.11.txt" in the same directory. 
 
-3.
+3. Usage = "QTG_Finder.py input_feature_list QTL_gene_list species_abbreviation"
+
+As a example, Run ```QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
 
 
 
+### For analyses and replications
 
-
-##For analyses and replications
-
-The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the ‘tests’ folder.  
+The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the ‘tests’ folder. The usage of each scripts (.py) are described in the beginnings of the file.   
