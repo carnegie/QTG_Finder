@@ -8,7 +8,7 @@ Authors: Fan Lin, December 2018
 
 ### For prediction
 
-The source code and input files can be found in the <mark>prediction</mark> folder. Runing the 'QTG_Finder.py' will require a QTL gene list provided by the user.
+The source code and input files can be found in the <mark>'prediction'</mark> folder. Runing the 'QTG_Finder.py' will require a QTL gene list provided by the user.
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
@@ -48,5 +48,5 @@ Users can also run the batch file 'QTG_batch_Prediction.sh' on a server.
 
 ### For analyses and replications
 
-The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the <mark>‘tests</mark> folder. The usage of each scripts (.py) is described in the beginnings of the file.
+The source code and input files for cross-validation, feature importance analysis, literature validation and category analysis can be found in the <mark>‘tests'</mark> folder. The usage of each scripts (.py) is described in the beginnings of the file.
 
