@@ -36,7 +36,7 @@ Gene3 in QTL2
 
 …
 
-2. Make sure tou have the feature list "Arabidopsis_features-v3.05.txt" or "rice_features_v1.3.11.txt" in the same directory. 
+2. Make sure you have the feature list "Arabidopsis_features-v3.05.txt" or "rice_features_v1.3.11.txt" in the same directory.
 
 3. Usage = "QTG_Finder.py input_feature_list QTL_gene_list species_abbreviation"
 
