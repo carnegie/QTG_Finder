@@ -16,31 +16,25 @@ The source code and input files can be found in the <mark>'prediction'</mark> fo
 
 QTL1 name
 
-Gene1 in QTL1
-
-Gene2 in QTL1
-
-Gene3 in QTL1
-
+Gene1 in QTL1<br />
+Gene2 in QTL1<br />
+Gene3 in QTL1<br />
 … 
 
 // 
 
 QTL2 name 
 
-Gene1 in QTL2
-
-Gene2 in QTL2
-
-Gene3 in QTL2 
-
+Gene1 in QTL2<br />
+Gene2 in QTL2<br />
+Gene3 in QTL2 <br />
 …
 
 2. Make sure you have the feature list "Arabidopsis_features-v3.05_n.txt" or "rice_features_v1.3.11_n.txt" in the same directory.
 
 3. Usage = "QTG_Finder.py input_feature_list QTL_gene_list species_abbreviation" <br />
-QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_genes.csv' for a example
-feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice
+QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_genes.csv' for a example <br />
+feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice <br />
 species_abbreviation: "AT" for Arabidopsis; "OS" for rice <br />
 As a example, ```python3 QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
 
