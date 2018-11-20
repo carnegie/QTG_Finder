@@ -42,7 +42,8 @@ Gene3 in QTL2
 
 As a example, ```python3 QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
 
-Users can also run the batch file 'QTG_batch_Prediction.sh' on a server.
+
+As an alternative, users can also run the batch file 'QTG_batch_Prediction.sh' on a server.
 
 
 
