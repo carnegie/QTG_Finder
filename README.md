@@ -12,19 +12,14 @@ The source code and input files can be found in the <mark>'prediction'</mark> fo
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
-// 
-
-QTL1 name
-
+// <br />
+QTL1 name<br />
 Gene1 in QTL1<br />
 Gene2 in QTL1<br />
 Gene3 in QTL1<br />
-… 
-
-// 
-
-QTL2 name 
-
+… <br />
+// <br />
+QTL2 name <br />
 Gene1 in QTL2<br />
 Gene2 in QTL2<br />
 Gene3 in QTL2 <br />
@@ -37,7 +32,6 @@ QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_ge
 feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice <br />
 species_abbreviation: "AT" for Arabidopsis; "OS" for rice <br />
 As a example, ```python3 QTG_Finder.py Arabidopsis_features-v3.05.txt SSQ_batch_QTL_genes.csv 'AT'```
-
 
 As an alternative, users can also run the batch file 'QTG_batch_Prediction.sh' on a server.
 
