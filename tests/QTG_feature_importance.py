@@ -3,9 +3,9 @@
 # Version 20181106
 # Purpose: Use leave-one-out analysis and the change of AUC-ROC to evaluate importance of each feature. 
 # Usage = "QTG_feature_importance.py input_feature_list species_abbreviation"
-# feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice 
+# feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# Usage example: QTG_feature_importance.py Arabidopsis_features-v3.05.txt 'AT'
+# Usage example: QTG_feature_importance.py Arabidopsis_features-v3.05_n.csv 'AT'
 
 import numpy as np
 import random
