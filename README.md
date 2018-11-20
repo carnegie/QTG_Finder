@@ -39,6 +39,7 @@ Gene3 in QTL2
 2. Make sure you have the feature list "Arabidopsis_features-v3.05_n.txt" or "rice_features_v1.3.11_n.txt" in the same directory.
 
 3. Usage = "QTG_Finder.py input_feature_list QTL_gene_list species_abbreviation"
+
 QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_genes.csv' for a example
 feature list: use Arabidopsis_features-v3.05.txt for Arabidopsis; use rice_features_v1.3.11.txt for rice
 species_abbreviation: "AT" for Arabidopsis; "OS" for rice
