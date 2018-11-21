@@ -3,7 +3,7 @@
 # Version 1.0
 # last update: 20181105
 # Purpose: Use for ranking causal genes in QTL regions. 
-# Usage = "QTG_Finder.py feature_list QTL_gene_list species_abbreviation"
+# Usage = "QTG_Finder.py -fl feature list -gl QTL_gene_list -sp species_abbreviation"
 # feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
 # QTL_gene_list: this is the list of QTL genes to be ranked. QTLs should be seperated by '//'. Structure for each QTL: start with '//' and QTL name, then append a gene list. See 'SSQ_batch_QTL_genes.csv' for a example  
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
