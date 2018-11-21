@@ -24,9 +24,10 @@ import itertools as it
 import argparse
 
 parser = argparse.ArgumentParser(description='QTL_Finder_v1.0')
-parser.add_argument('-fl',dest='fl',required=True,help='Input feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice')
-parser.add_argument('-gl',dest='gl',required=True, help='Input QTL gene list: this is the list of QTL genes to be ranked. See SSQ_batch_QTL_genes.csv for a example')
-parser.add_argument('-sp',dest='sp',required=True,choices=['AT', 'OS'], help='Species: use "AT" for Arabidopsis; "OS" for rice')
+requiredArg = parser.add_argument_group('required arguments')
+requiredArg.add_argument('-fl',dest='fl',required=True,help='Input feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice')
+requiredArg.add_argument('-gl',dest='gl',required=True, help='Input QTL gene list: this is the list of QTL genes to be ranked. See SSQ_batch_QTL_genes.csv for a example')
+requiredArg.add_argument('-sp',dest='sp',required=True,choices=['AT', 'OS'], help='Species: use "AT" for Arabidopsis; "OS" for rice')
 args = parser.parse_args()
 
 start_time = time.time()
