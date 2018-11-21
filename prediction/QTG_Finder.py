@@ -7,7 +7,7 @@
 # feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
 # QTL_gene_list: this is the list of QTL genes to be ranked. QTLs should be seperated by '//'. Structure for each QTL: start with '//' and QTL name, then append a gene list. See 'SSQ_batch_QTL_genes.csv' for a example  
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# Usage example: QTG_Finder.py Arabidopsis_features-v3.05_n.csv SSQ_batch_QTL_genes.csv 'AT'
+# Usage example: python QTG_Finder.py -fl Arabidopsis_features-v3.05_n.csv -gl SSQ_batch_QTL_genes.csv -sp 'AT'
 
 import numpy as np
 import random
@@ -21,13 +21,20 @@ from sklearn import ensemble
 import sys
 import time
 import itertools as it
+import argparse
+
+parser = argparse.ArgumentParser(description='QTL_Finder_v1.0')
+parser.add_argument('-fl',dest='fl',required=True,help='Input feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice')
+parser.add_argument('-gl',dest='gl',required=True, help='Input QTL gene list: this is the list of QTL genes to be ranked. See SSQ_batch_QTL_genes.csv for a example')
+parser.add_argument('-sp',dest='sp',required=True,choices=['AT', 'OS'], help='Species: use "AT" for Arabidopsis; "OS" for rice')
+args = parser.parse_args()
 
 start_time = time.time()
 
 def train_qtg(df, train_set, Validation_set_i):
-    if sys.argv[3]=='AT': 
+    if args.sp=='AT': 
         mol_para=['auto',20]# optimum parameters for Arabidopsis
-    if sys.argv[3]=='OS':
+    if args.sp=='OS':
         mol_para=['auto',5]# optimum parameters for rice
     clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0]) # Random forest parameters
     neg_inter=5000  # interrations for randomly selecting negatives from genome and re-training models 
@@ -58,11 +65,11 @@ def train_qtg(df, train_set, Validation_set_i):
         for i in range(len(rank_list_df_sorted)):            
             indenti_f.write (rank_list_df_sorted['ID'][i]+','+str(rank_list_df_sorted['Rank'][i])+','+ str(rank_list_df_sorted['freq'][i]) +'\n')
 
-dt = sys.argv[1] # input feature list
+dt = args.fl # input feature list
 
 #### check know QTL gene on QTLs, remove, reducant ID run
 
-with open(sys.argv[2],'r') as f:  
+with open(args.gl,'r') as f:  
         for key,group in it.groupby(f,lambda line: line.startswith('//') ): # QTLs are seperated by // in input file. 
             if not key:
                 df = pd.read_csv(dt)
