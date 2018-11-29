@@ -37,7 +37,7 @@ def train_qtg(df, train_set, Validation_set_i):
         mol_para=['auto',20]# optimum parameters for Arabidopsis
     if args.sp=='OS':
         mol_para=['auto',5]# optimum parameters for rice
-    clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0],n_jobs=-1) # Random forest parameters
+    clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0]) # Random forest parameters
     neg_inter=5000  # interrations for randomly selecting negatives from genome and re-training models 
     prediction_list = (len(Validation_set_i))*[0]
     for i in range(0, neg_inter):
