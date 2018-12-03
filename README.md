@@ -7,8 +7,7 @@ Authors: Fan Lin, December 2018
          Jue Fan, December 2018
 
 ### For prediction
-
-The source code and input files can be found in the <mark>'prediction'</mark> folder. Runing the 'QTG_Finder.py' will require a QTL gene list provided by the user.
+The source code and input files can be found in the <mark>'prediction'</mark> folder. Running the 'QTG_Finder.py' will require a QTL gene list provided by the user.
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
@@ -31,8 +30,15 @@ Gene3 in QTL2 <br />
 QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_genes.csv' for a example <br />
 feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice <br />
 species_abbreviation: "AT" for Arabidopsis; "OS" for rice <br />
-As a example, ```python QTG_Finder.py -fl Arabidopsis_features-v3.05_n.csv -gl SSQ_batch_QTL_genes.csv -sp 'AT'```
+As a example,
+```python3
+python QTG_Finder.py -fl Arabidopsis_features-v3.05_n.csv -gl SSQ_batch_QTL_genes.csv -sp 'AT'
+```
 
+For help,
+```python3
+python locpred.py -h
+```
 
 ### For analyses and replications
 
