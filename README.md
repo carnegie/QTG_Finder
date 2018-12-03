@@ -37,7 +37,7 @@ python QTG_Finder.py -fl Arabidopsis_features_v3.05_n.csv -gl SSQ_batch_QTL_gene
 
 For help,
 ```python3
-python locpred.py -h
+python QTG_Finder.py -h
 ```
 
 ### For analyses and replications
