@@ -28,6 +28,7 @@ def train_qtg_metrics(df,train_set):
         mol_para=['auto',20]# parameter for Arabidopsis
     if sys.argv[2]=='OS':
         mol_para=['auto',5]# parameter for rice
+    k_numb_iter=50 #  interations for randomly re-spliting causal gene list
     clf = ensemble.RandomForestClassifier(n_estimators=200,min_samples_split=2,max_features=mol_para[0]) # random forest parameters
     froc =open(sys.argv[2]+"_"+"ROC.txt", 'w') # output file for ploting ROC curve
     all_mean_prec = [float()]*k_numb_iter
@@ -35,7 +36,6 @@ def train_qtg_metrics(df,train_set):
     P_R_all_auc = []
     ROC_all_auc=[]
     importance=[]
-    k_numb_iter=50 #  interations for randomly re-spliting causal gene list
     if  k_numb_iter > 1 : # re-shuffle on or off based on k_iter
         shuffle_switch=True
     else: 

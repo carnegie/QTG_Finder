@@ -12,8 +12,7 @@
 import numpy as np
 import random
 import pandas as pd
-from sklearn import cross_validation
-from sklearn.model_selection import KFold
+from sklearn import model_selection  # from sklearn.model_selection instead of from sklearn.cross_validation.
 from sklearn import svm
 from sklearn import metrics
 from sklearn import preprocessing
@@ -64,7 +63,7 @@ def train_qtg(df, train_set, Validation_set_i):
         for i in range(len(rank_list_df_sorted)):            
             indenti_f.write (rank_list_df_sorted['ID'][i]+','+str(rank_list_df_sorted['Rank'][i])+','+ str(rank_list_df_sorted['freq'][i]) +'\n')
 
-#### check know QTL gene on QTLs, remove, reducant ID run
+#### check known QTL gene on QTLs, remove, reducant ID, run
 if __name__ == '__main__':
     dt = args.fl # input feature list
     start_time = time.time()
