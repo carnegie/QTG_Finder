@@ -11,15 +11,16 @@ The source code and input files can be found in the <mark>'prediction'</mark> fo
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
+||
+|:-| 
 |//|
-|-| 
-|QTL1|
+|QTL1 name|
 |Gene1 in QTL1|
 |Gene2 in QTL1|
 |Gene3 in QTL1|
 |…| 
 |//|
-|QTL2|
+|QTL2 name|
 |Gene1 in QTL2|
 |Gene2 in QTL2|
 |Gene3 in QTL2|
