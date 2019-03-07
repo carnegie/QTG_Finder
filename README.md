@@ -11,18 +11,19 @@ The source code and input files can be found in the <mark>'prediction'</mark> fo
 
 1. Users can prepare the QTL gene list as a single column table (.csv). See “SSQ_batch_QTL_genes.csv” for a example.
 
-// <br />
-QTL1 name<br />
-Gene1 in QTL1<br />
-Gene2 in QTL1<br />
-Gene3 in QTL1<br />
-… <br />
-// <br />
-QTL2 name <br />
-Gene1 in QTL2<br />
-Gene2 in QTL2<br />
-Gene3 in QTL2 <br />
-…
+|//|
+|-| 
+|QTL1|
+|Gene1 in QTL1|
+|Gene2 in QTL1|
+|Gene3 in QTL1|
+|…| 
+|//|
+|QTL2|
+|Gene1 in QTL2|
+|Gene2 in QTL2|
+|Gene3 in QTL2|
+|…|
 
 2. Make sure you have the feature list "Arabidopsis_features_v3.05_n.csv" or "rice_features_v1.3.11_n.csv" in the same directory.
 
