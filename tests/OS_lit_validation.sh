@@ -16,5 +16,4 @@ srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./inp
 srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./input/OS/Oikawa_2015.csv 'OS'
 srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./input/OS/Fan_2016.csv 'OS'
 srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./input/OS/Fukuoka_2014.csv 'OS'
-srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./input/OS/Fjellstrom_2004_pikh.csv 'OS'
 srun python QTG_literature_validation.py ./input/rice_features_v1.3.11.txt ./input/OS/zeng_2013.csv 'OS'
