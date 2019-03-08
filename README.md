@@ -26,7 +26,7 @@ The source code and input files can be found in the <mark>'prediction'</mark> fo
 |Gene3 in QTL2|
 |…|
 
-2. Make sure you have pre-calculated models "AT_model.dat" or "OS_model.dat" in the same directory. "AT_model.dat" is the Arabidopsis model. "OS_model.dat”is the rice model
+2. Make sure you have unzipped pre-calculated models "AT_model.dat" or "OS_model.dat" to your working directory. "AT_model.dat" is the Arabidopsis model. "OS_model.dat”is the rice model.
 
 3. Usage ="QTG_Finder_predict.py -gl QTL_gene_list -sp species_abbreviation" <br />
 QTL_gene_list: this is the list of QTL genes to be ranked. See 'SSQ_batch_QTL_genes.csv' for a example <br />
