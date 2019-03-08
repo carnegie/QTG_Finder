@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
-# Version 20181105
+# Version 20190307
 # Purpose: The AUC-ROC from cross validaiton was used to optimize model parameters
 # Usage = "QTG_Cross_validation.py input_feature_list species_abbreviation"
-# feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
+# feature list: use Arabidopsis_features_v4 for Arabidopsis; use rice_features_v2.csv for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# Usage example: QTG_Cross_validation.py Arabidopsis_features-v3.05_n.csv 'AT'
+# Usage example: QTG_Cross_validation.py Arabidopsis_features_v4 'AT'
 
 import numpy as np
 import random
@@ -25,11 +25,11 @@ start_time = time.time()
 
 def train_qtg_metrics(df,train_set):
     if sys.argv[2]=='AT': 
-        mol_para=['auto',20]# parameter for Arabidopsis
+        mol_para=[9,20]# parameter for Arabidopsis
     if sys.argv[2]=='OS':
-        mol_para=['auto',5]# parameter for rice
+        mol_para=[9,5]# parameter for rice
     k_numb_iter=50 #  interations for randomly re-spliting causal gene list
-    clf = ensemble.RandomForestClassifier(n_estimators=200,min_samples_split=2,max_features=mol_para[0]) # random forest parameters
+    clf = ensemble.RandomForestClassifier(n_estimators=100,min_samples_split=2,max_features=mol_para[0]) # random forest parameters
     froc =open(sys.argv[2]+"_"+"ROC.txt", 'w') # output file for ploting ROC curve
     all_mean_prec = [float()]*k_numb_iter
     all_mean_tpr1 = [float()]*k_numb_iter
@@ -40,7 +40,7 @@ def train_qtg_metrics(df,train_set):
         shuffle_switch=True
     else: 
         shuffle_switch=False
-    neg_numb_iter=100 # iteration for randomly select negatives and re-train model
+    neg_numb_iter=50 # iteration for randomly select negatives and re-train model
     for n in range(0, k_numb_iter): #  re-spliting causal gene list for cross-validation
         skf=KFold(len(train_set), n_folds=5,shuffle=shuffle_switch) # five fold cross-validatoin
         P_R_auc_mean=[]

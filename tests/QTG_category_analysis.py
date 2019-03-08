@@ -3,9 +3,9 @@
 # Version 20181106
 # Purpose: Use leave-one-out analysis to evaluate if the algrithm prefer certain categories of causal genes over other categories
 # Usage = "QTG_category_analysis.py feature_list species_abbreviation"
-# feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
+# feature list: use Arabidopsis_features_v4.csv for Arabidopsis; use rice_features_v2.csv for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# Usage example: QTG_category_analysis.py Arabidopsis_features-v3.05_n.csv 'AT'  
+# Usage example: QTG_category_analysis.py Arabidopsis_features_v4.csv 'AT'  
 
 
 import numpy as np
@@ -22,10 +22,10 @@ import sys
 
 def train_qtg(df, train_set, validation_set):
     if sys.argv[3]=='AT': 
-        mol_para=['auto',20]# optimum parameters for Arabidopsis
+        mol_para=[9,20]# optimum parameters for Arabidopsis
     if sys.argv[3]=='OS':
-        mol_para=['auto',5] # optimum parameters for rice
-    clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0]) # 200 trees
+        mol_para=[9,5] # optimum parameters for rice
+    clf = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=2,max_features=mol_para[0]) # 200 trees
     fout = open(sys.argv[3]+"category_rank.txt", 'w') # output file
     prediction_list = [[] for x in range(len(validation_set))]
     neg_inter=5000 #

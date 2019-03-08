@@ -3,9 +3,9 @@
 # Version 20181106
 # Purpose: Use leave-one-out analysis and the change of AUC-ROC to evaluate importance of each feature. 
 # Usage = "QTG_feature_importance.py input_feature_list species_abbreviation"
-# feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
+# feature list: use Arabidopsis_features_v4.csv for Arabidopsis; use rice_features_v2.csv for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
-# Usage example: QTG_feature_importance.py Arabidopsis_features-v3.05_n.csv 'AT'
+# Usage example: QTG_feature_importance.py Arabidopsis_features_v4.csv 'AT'
 
 import numpy as np
 import random
@@ -25,10 +25,10 @@ start_time = time.time()
 
 def train_qtg_metrics_LOO(df, train_set,out): 
     if sys.argv[2]=='AT': 
-        mol_para=['auto',20]# parameters for Arabidopsis
+        mol_para=[9,20]# parameters for Arabidopsis
     if sys.argv[2]=='OS':
-        mol_para=['auto',5]# parameters for Arabidopsis
-    clf = ensemble.RandomForestClassifier(n_estimators=200,min_samples_split=2,max_features=mol_para[0]) # Random forest parameters
+        mol_para=[9,5]# parameters for Arabidopsis
+    clf = ensemble.RandomForestClassifier(n_estimators=100,min_samples_split=2,max_features=mol_para[0]) # Random forest parameters
     k_numb_iter=50 #  interations for randomly re-spliting causal gene list
     all_auc = []
 
@@ -37,7 +37,7 @@ def train_qtg_metrics_LOO(df, train_set,out):
     else: 
         shuffle_switch=False
 
-    neg_numb_iter=100 #interrations for randomly selecting negatives from genome and re-training models 
+    neg_numb_iter=50 #interrations for randomly selecting negatives from genome and re-training models 
     for n in range(0, k_numb_iter): 
         skf=KFold(len(train_set), n_folds=5,shuffle=shuffle_switch) # five fold cross-validatoin
         roc_auc_mean=[]

@@ -3,10 +3,10 @@
 # Version 20181106
 # Purpose: Use leave-one-out analysis and the change of AUC-ROC to evaluate importance of each feature. Note: This script is for testing causal genes in a single QTL. Batch files 'AT_lit_validation.sh' or 'OS_lit_validation.sh' are abaliable to analyze multiple QTLs.  
 # Usage = "QTG_literature_validation.py feature_list species_abbreviation QTL_gene_list_flag"
-# feature list: use Arabidopsis_features-v3.05_n.csv for Arabidopsis; use rice_features_v1.3.11_n.csv for rice 
+# feature list: use Arabidopsis_features_v4.csv for Arabidopsis; use rice_features_v2.csv for rice 
 # species_abbreviation: "AT" for Arabidopsis; "OS" for rice
 # QTL_gene_list_flag: a list of genes in the QTL. Causal genes are labeled with 1 in the second column. Other genome genes are labeled as 0. examples can be found in 'tests/input/AT' or 'tests/input/OS/'
-# Usage example: QTG_literature_validation.py Arabidopsis_features-v3.05_n.csv 'AT' ./input/AT/Huang_2012.csv  
+# Usage example: QTG_literature_validation.py Arabidopsis_features_v4.csv 'AT' ./input/AT/Huang_2012.csv  
 
 import numpy as np
 import random
@@ -23,10 +23,10 @@ import time
 start_time = time.time()
 def train_qtg(df, train_set, Validation_set_i):
     if sys.argv[3]=='AT': 
-        mol_para=['auto',20]# parameters for Arabidopsis
+        mol_para=[9,20]# parameters for Arabidopsis
     if sys.argv[3]=='OS':
-        mol_para=['auto',5] # parameters for rice  
-    clf = ensemble.RandomForestClassifier(n_estimators=200, min_samples_split=2,max_features=mol_para[0]) 
+        mol_para=[9,5] # parameters for rice  
+    clf = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=2,max_features=mol_para[0]) 
     neg_inter=5000  # interrations for randomly selecting negatives from genome and re-training models 
 
     prediction_list = (len(Validation_set_i))*[0]
