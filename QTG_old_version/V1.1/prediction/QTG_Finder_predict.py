@@ -29,23 +29,28 @@ def train_qtg(df, Validation_set_i):
 
     prediction_list = (len(Validation_set_i))*[0]
     validation_feature_all = Validation_set_i.drop(['class'], axis=1)  
-    neg_inter= pickle.load(pik_f) #  number of iter models
-    print(neg_inter)      
-    for i in range(0,neg_inter ): 
-        single_model=pickle.load(pik_f) # unpack individual models
-        validation_pred = single_model.predict_proba(validation_feature_all)[:,1] # predictions based on models
-        prediction_list+= validation_pred # combine prediction results
-    prediction_list_all=np.array(prediction_list) 
-    Ranks=prediction_list_all.argsort()[::-1].argsort() # rank genes based on times of being predicted as a causal gene
-    prediction_list_freq= [l/(neg_inter) for l in prediction_list] # calculate freqency of being predicted as a causal gene
-    rank_list_df= pd.DataFrame( {'ID':Validation_set_ID_uni, 'freq': prediction_list_freq }) 
-    for i in gene_ex: # label excluded IDs with a freqency of 0
-        rank_list_df= rank_list_df.append({'ID': i, 'freq':0 }, ignore_index=True) 
-
-    rank_list_df['Rank'] = rank_list_df['freq'].rank(ascending=0,method='average') # For genes with the same frequency, the average rank is used for all of them
-    rank_list_df_sorted=rank_list_df.sort_values(by=['Rank'],ascending =True) 
-    rank_list_df_sorted=rank_list_df_sorted.reset_index(drop= True)
-
+    if len(validation_feature_all)>0: 
+        neg_inter= pickle.load(pik_f) #  number of iter models
+        print(neg_inter)      
+        for i in range(0,neg_inter ): 
+            single_model=pickle.load(pik_f) # unpack individual models
+            validation_pred = single_model.predict_proba(validation_feature_all)[:,1] # predictions based on models
+            prediction_list+= validation_pred # combine prediction results
+        prediction_list_all=np.array(prediction_list) 
+        Ranks=prediction_list_all.argsort()[::-1].argsort() # rank genes based on times of being predicted as a causal gene
+        prediction_list_freq= [l/(neg_inter) for l in prediction_list] # calculate freqency of being predicted as a causal gene
+        rank_list_df= pd.DataFrame( {'ID':Validation_set_ID_uni, 'freq': prediction_list_freq }) 
+        for i in gene_ex: # label excluded IDs with a freqency of 0
+            rank_list_df= rank_list_df.append({'ID': i, 'freq':0 }, ignore_index=True) 
+        rank_list_df['Rank'] = rank_list_df['freq'].rank(ascending=0,method='average') # For genes with the same frequency, the average rank is used for all of them
+        rank_list_df_sorted=rank_list_df.sort_values(by=['Rank'],ascending =True) 
+        rank_list_df_sorted=rank_list_df_sorted.reset_index(drop= True)
+    else: #QTL genes without sufficient information
+        if len(gene_ex)!=0:
+            rank_list_df_sorted= pd.DataFrame( {'ID':[], 'freq': [],'Rank':[] }) 
+            for i in gene_ex:       
+                rank_list_df_sorted=rank_list_df_sorted.append({'ID': i, 'freq':'NA', 'Rank':'NA'}, ignore_index=True)
+        
     with open('QTL_gene_rank.csv','a') as indenti_f: # output gene rank and frequency 
         indenti_f.write ('//'+'\n'+QTL_name+'\n')
         indenti_f.write ('ID'+','+'Rank_in_a_QTL'+','+'Frequency'+'\n')
