@@ -31,12 +31,13 @@ Rice: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/OS_model.dat
 Sorghum: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SB_model.dat.zip
 Setaria: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SV_model.dat.zip
 
-3.Unzip the recalculated models in your working directory. For example: 
-```
+3.Unzip the recalculated models in working directory: ./QTG2_prediction
+Example:
+```java
 jar xvf AT_model.dat.zip
 ```
 
-4. Usage ="QTG_Finder_predict.py -gl QTL_gene_list -sp species_abbreviation" <br />
+4. Usage: “QTG_Finder_predict.py -gl QTL_gene_list -sp species_abbreviation" <br />
 QTL_gene_list: this is the list of QTL genes to be ranked. See "SV_height_QTL_example.csv" for a example <br />
 species_abbreviation: "AT" for Arabidopsis; "OS" for rice; "SB" for sorghum;"SV" for Setaria viridis  <br />
 As a example,
