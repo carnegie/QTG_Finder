@@ -23,7 +23,7 @@ print("sklearn__version",sklearn.__version__)
 
 parser = argparse.ArgumentParser(description='QTL_Finder_v2.0')
 requiredArg = parser.add_argument_group('required arguments')
-requiredArg.add_argument('-gl',dest='gl',required=True, help='Input QTL gene list: this is the list of QTL genes to be ranked. See SSQ_batch_QTL_genes.csv for a example')
+requiredArg.add_argument('-gl',dest='gl',required=True, help='Input QTL gene list: this is the list of QTL genes to be ranked. See AT_Seedsize_QTL_example.csv for a example')
 requiredArg.add_argument('-sp',dest='sp',required=True,choices=['AT','OS','SV','SB'], help='Species: use "AT" for Arabidopsis; "OS" for rice; "SV" for Setaria viridis; "SB" for Sorghum bicolor')
 args = parser.parse_args()
 
