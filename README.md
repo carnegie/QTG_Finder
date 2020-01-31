@@ -25,13 +25,13 @@ The source code and input files can be found in the <mark>'QTG2_prediction'</mar
 |Gene3 in QTL2|
 |…|
 
-2. The pre-calculated models can be downloaded from the following links: 
-Arabidopsis: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/AT_model.dat.zip
-Rice: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/OS_model.dat.zip
-Sorghum: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SB_model.dat.zip
-Setaria: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SV_model.dat.zip
+2. The pre-calculated models can be downloaded from the following links: <br />
+Arabidopsis: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/AT_model.dat.zip<br />
+Rice: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/OS_model.dat.zip<br />
+Sorghum: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SB_model.dat.zip<br />
+Setaria: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SV_model.dat.zip<br />
 
-3.Unzip the recalculated models in working directory: ./QTG2_prediction
+3. Unzip the recalculated models in working directory: ./QTG2_prediction<br />
 Example:
 ```java
 jar xvf AT_model.dat.zip
