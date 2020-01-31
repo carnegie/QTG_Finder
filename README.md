@@ -31,7 +31,7 @@ Rice: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/OS_model.dat
 Sorghum: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SB_model.dat.zip<br />
 Setaria: https://carnegiedpb.s3.amazonaws.com/software/QTG2_prediction/SV_model.dat.zip<br />
 
-3. Unzip the recalculated models in working directory: ./QTG2_prediction<br />
+3. Unzip the pre-calculated models in working directory: ./QTG2_prediction<br />
 Example:
 ```java
 jar xvf AT_model.dat.zip
