@@ -49,6 +49,7 @@ For help,
 ```python3
 python QTG_Finder_predict.py -h
 ```
+5. “QTL_gene_rank.csv” will be the output file. 
 
 ### For analyses and replications
 
