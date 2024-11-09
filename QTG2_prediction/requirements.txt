@@ -1,0 +1,4 @@
+python=3.7.12
+pandas=0.25.3
+numpy=1.19.5
+scikit-learn=0.21.2
