@@ -20,6 +20,8 @@ import argparse
 import pickle
 import os
 print("sklearn__version",sklearn.__version__)
+print("pandas__version",pd.__version__)
+print("numpy__version",np.__version__)
 
 parser = argparse.ArgumentParser(description='QTL_Finder_v2.0')
 requiredArg = parser.add_argument_group('required arguments')
